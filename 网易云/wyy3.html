@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="format.ico" />
+    <link rel="stylesheet" href="wyy3.css" />
+    <script src="wyy3.js"></script>
+    <!-- <script src="NeteaseCloudMusicApi-2.20.5/router/login_cellphone.js"></script> -->
+    <title>网易云音乐</title>
+</head>
+
+<body>
+    <!-- head 页面抬头 -->
+    <div class="head">
+        <div class="head_logo">
+            <img src="format.ico" height="50" width="50">
+            <a hidefocus="true" href="/#">网易云音乐</a>
+        </div>
+
+        <div class="head_navList">
+            <nav class="head_nav">
+                <ul>
+                    <li><a href="">发现音乐</a></li>
+                    <li><a href="">我的音乐</a></li>
+                    <li><a href="">朋友</a></li>
+                    <li><a href="">商城</a></li>
+                    <li><a href="">音乐人</a></li>
+                    <li><a href="">下载客户端</a></li>
+                    <li><a href="">app</a></li>
+                </ul>
+            </nav>
+            <nav class="head_login">
+                <ul>
+                    <li>
+                        <input type="text" name="" id="" placeholder=" 音乐/视频/电台/用户" class="searchText" />
+                        <i class="iconfont icon-fangdajing searchBtn"></i>
+                    </li>
+                    <li class="create">
+                        <a href="">
+                            <button class="creatorcenter">创作者中心</button></a>
+                    </li>
+                    <li class="notLogin" id="notLogin">
+                        <a href="javascript:;" id="bLogin" onclick="ShowLoginText()">
+                            <button class="loginBtn">登录</button></a>
+                    </li>
+                    <!-- <li class="userInfo">
+              <img src="./img/img_4.jpg" alt="" class="avatar" />
+              <ul class="info">
+                <li>个人设置</li>
+                <li class="signOut">退出登录</li>
+              </ul>
+            </li>-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- loginBox 登录（未完成） -->
+    <div class="loginBox" id="loginBox">
+        <div class="login-item"><input type="text" id="InputUsername" placeholder="请输入手机号" /></div>
+        <div class="login-item"><input type="password" id="InputUserPwd" placeholder="请输入密码" /></div>
+        <div class="login-item"><a href="javascript:;" onclick="Login()">登录</a></div>
+    </div>
+    <!-- page_list 页面左侧歌单 -->
+    <div class="page_list">
+        <div class="list_container" id="listContainer">
+            <div class="list list_recommend">
+                <p class="title">发现音乐</p>
+                <div class="btngroups">
+                    <p class="btn mv"><i class="fa fa-youtube-play" aria-hidden="true"></i>&nbsp;&nbsp;视频</p>
+                    <p class="btn friends"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;&nbsp;朋友</p>
+                    <p class="btn live"><i class="fa fa-direct" aria-hidden="true"></i>&nbsp;&nbsp;直播</p>
+                    <p class="btn fm"><i class="fa fa-bullseye" aria-hidden="true"></i>&nbsp;&nbsp;私人FM</p>
+                </div>
+            </div>
+            <div class="list list_me">
+                <p class="title">我的音乐</p>
+                <div class="btngroups">
+                    <p class="btn local"><i class="fa fa-music" aria-hidden="true"></i>&nbsp;&nbsp;本地音乐</p>
+                    <p class="btn download"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;下载管理</p>
+                    <p class="btn cloud"><i class="fa fa-cloud" aria-hidden="true"></i>&nbsp;&nbsp;我的音乐云盘</p>
+                    <p class="btn me_fm"><i class="fa fa-bullseye" aria-hidden="true"></i>&nbsp;&nbsp;我的电台</p>
+                    <p class="btn me_collection"><i class="fa fa-collect" aria-hidden="true"></i>&nbsp;&nbsp;我的收藏</p>
+                </div>
+            </div>
+            <div class="list list_create">
+                <p class="title">创建的歌单
+                    <span class="title_btngroups">
+                        <a href="javascript:void(0);" class="btn addlist" id="addList"><i class="fa fa-plus-circle"
+                                aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="btn unfoldlist"><i class="fa fa-angle-down"
+                                aria-hidden="true"></i></a>
+                    </span>
+                </p>
+                <div class="btngroups">
+                    <p class="btn list_create_like active" id="list_create_like"><i class="fa fa-heart-o"
+                            aria-hidden="true"></i>&nbsp;&nbsp;我喜欢的音乐</p>
+                    <p class="btn list_create_001"><i class="fa fa-music" aria-hidden="true"></i>&nbsp;&nbsp;歌单001</p>
+                </div>
+            </div>
+            <div class="list list_collect">
+                <p class="title">收藏的歌单
+                    <span class="title_btngroups">
+                        <a href="javascript:void(0);" class="btn unfoldlist"><i class="fa fa-angle-down"
+                                aria-hidden="true"></i></a>
+                    </span>
+                </p>
+                <div class="btngroups">
+                    <p class="btn list_collect_id001"><i class="fa fa-music" aria-hidden="true"></i>&nbsp;&nbsp;舞曲
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <!-- picWrap 轮播 -->
+        <div class="picWrap" id="picWrap">
+            <div class="pic" id="pic">
+                <div class="pic_inner" id="pic_inner" style="left: -1080px;">
+                    <img src="http://p1.music.126.net/DkyE7a9vrbOweu33hwA7AQ==/109951164994677173.jpg?imageView&quality=89"
+                        alt="3" />
+                    <img src="http://p1.music.126.net/rOPEBWp8WV9PWCDngNWZjQ==/109951164994651536.jpg?imageView&quality=89"
+                        alt="1" />
+                    <img src="http://p1.music.126.net/hHDmsWRzjKLGqFyBhzk4OA==/109951164994712269.jpg?imageView&quality=89"
+                        alt="2" />
+                    <img src="http://p1.music.126.net/DkyE7a9vrbOweu33hwA7AQ==/109951164994677173.jpg?imageView&quality=89"
+                        alt="3" />
+                    <img src="http://p1.music.126.net/rOPEBWp8WV9PWCDngNWZjQ==/109951164994651536.jpg?imageView&quality=89"
+                        alt="1" />
+                </div>
+                <div class="pic_dots" id="pic_dots">
+                    <span index="1" class="on"></span>
+                    <span index="2"></span>
+                    <span index="3"></span>
+                    <!-- <span index="4"></span>
+                    <span index="5"></span> -->
+                </div>
+                <a href="javascript:;" id="pic_prev" class="arrow">《</a>
+                <a href="javascript:;" id="pic_next" class="arrow">》</a>
+            </div>
+        </div>
+
+
+
+        <!-- 歌单推荐 -->
+        <div class="recom">
+            <div class="recom_title">
+                <h2>歌单推荐</h2>
+                <a href="./musicList/musicList.html">
+                    <span class="recom__more">更多>></span></a>
+            </div>
+            <hr />
+            <div class="recom_listWrap">
+                <ul class="recom_list"></ul>
+            </div>
+
+            <div class="recom_dots">
+                <span class="active"></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- 音乐帖和今日歌曲 -->
+        <div class="article_hotsong">
+            <div class="article">
+                <h2>Music Stickers</h2>
+                <div class="img"></div>
+                <p class="title">再盛大的相遇，都是一场别离。</p>
+                <hr />
+                <p class="info">
+                    音乐贴，从网友的美文推荐中精选而出，是余音给每一篇好作品的支持和鼓励。每周一更新！
+                </p>
+            </div>
+            <div class="hotsong">
+                <h2>今日精选</h2>
+                <hr />
+                <ul class="todayMusic_list"></ul>
+            </div>
+        </div>
+
+        <div class="newMusic">
+            <div class="newMusic_title">
+                <h2>新碟上架</h2>
+                <a href="./newMusic/newMusic.html"><span class="newMusic_more">更多>></span></a>
+            </div>
+            <hr />
+            <ul class="newMusic_list"></ul>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <div class="loading_wrap">
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom_word">
+            <a>推荐歌单</a>
+            <img src="右箭头.png" alt="4.png"
+                style="width:64px;height:60px;position:absolute;margin-top:4px;margin-left:12px;">
+        </div>
+        <div class="bottom_down">
+
+        </div>
+
+        <!-- page_playerbar 页面底部播放控制条 -->
+        <div class="page_playerbar clearfix">
+            <!-- 播放控制按钮组 -->
+            <div class="playerbar_playbtngroup" id="playBtnGroup">
+                <div class="btn prev"><i class="fa fa-step-backward" aria-hidden="true"></i></div>
+                <div class="btn play"><i class="fa fa-play" aria-hidden="true"></i></div>
+                <div class="btn next"><i class="fa fa-step-forward" aria-hidden="true"></i></div>
+            </div>
+            <!-- 进度条 -->
+            <div class="playerbar_timeprogress">
+                <div class="progress" id="progress_box">
+                    <div class="progress_cache" id="progress_cache">
+                        <!-- 缓冲条 -->
+                    </div>
+                    <div class="progress_curbar" id="progress_bar">
+                        <div class="curbar_arc" id="progress_arc"></div>
+                    </div>
+                    <div class="time start" id="audio_currentTime">00:00</div>
+                    <div class="time end" id="audio_duration">59:59</div>
+                </div>
+            </div>
+            <!-- 其他控制按钮组 -->
+            <div class="playerbar_others">
+                <div class="volume">
+                    <div class="mutebtn" id="muteBtn" title="静音"><i class="fa fa-volume-up" aria-hidden="true"></i>
+                    </div>
+                    <div class="progress" id="vol_progress_box">
+                        <div class="progress_curbar" id="vol_progress_bar">
+                            <div class="curbar_arc" id="vol_progress_arc"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
