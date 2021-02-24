@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wyy_songlist.css" />
+    <link rel="icon" href="format.ico" />
+    <title>Document</title>
+</head>
+<script>
+    /*点击弹出按钮*/
+    function loginBox() {
+        var loginBox = document.getElementById("loginBox");
+        var notLogin = document.getElementById("notLogin");
+        loginBox.style.display = "block";
+        notLogin.style.display = "block";
+    };
+
+    /*点击关闭按钮*/
+    function closeBox() {
+        var loginBox = document.getElementById("loginBox");
+        var notLogin = document.getElementById("notLogin");
+        loginBox.style.display = "none";
+    }
+</script>
+
+<body>
+    <!-- head 页面抬头 -->
+    <div class="head">
+        <div class="head_logo">
+            <img src="format.ico" height="50" width="50">
+            <a hidefocus="true" href="wyy3.html">网易云音乐</a>
+        </div>
+
+        <div class="head_navList">
+            <nav class="head_nav">
+                <ul>
+                    <li><a href="">发现音乐</a></li>
+                    <li><a href="">我的音乐</a></li>
+                    <li><a href="">朋友</a></li>
+                    <li><a href="">商城</a></li>
+                    <li><a href="">音乐人</a></li>
+                    <li><a href="">下载客户端</a></li>
+                    <li><a href="">app</a></li>
+                </ul>
+            </nav>
+            <nav class="head_login">
+                <ul>
+                    <li>
+                        <input type="text" name="" id="" placeholder=" 音乐/视频/电台/用户" class="searchText" />
+                        <i class="iconfont icon-fangdajing searchBtn"></i>
+                    </li>
+                    <li class="create">
+                        <a href="">
+                            <button class="creatorcenter">创作者中心</button></a>
+                    </li>
+                    <li class="notLogin" id="notLogin">
+                        <a href="javascript:void(0);" id="bLogin" onclick="loginBox()">
+                            <button class="loginBtn">登录</button></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- loginBox 登录 -->
+    <div class="loginBox" id="loginBox">
+        <div class="close">
+            <a href="javascript:void(0)" onclick="closeBox()">关闭</a>
+        </div>
+        <div class="login-item"><input type="text" id="InputUsername" placeholder="请输入手机号" /></div>
+        <div class="login-item"><input type="password" id="InputUserPwd" placeholder="请输入密码" /></div>
+        <div class="login-item"><a href="javascript:;" onclick="Login()">登录</a></div>
+    </div>
+    <!-- page_list 页面左侧 -->
+    <div class="page_list">
+        <div class="list_container">
+            <div class="list list_recommend">
+                <div class="title">发现音乐</div>
+                <div class="btngroups">
+                    <div class="btn mv">&nbsp;&nbsp;视频</div>
+                    <div class="btn friends">&nbsp;&nbsp;朋友</div>
+                    <div class="btn live">&nbsp;&nbsp;直播</div>
+                    <div class="btn fm">&nbsp;&nbsp;私人FM</div>
+                </div>
+            </div>
+            <div class="list list_me">
+                <div class="title">我的音乐</div>
+                <div class="btngroups">
+                    <div class="btn local">&nbsp;&nbsp;本地音乐</div>
+                    <div class="btn download">&nbsp;&nbsp;下载管理</div>
+                    <div class="btn cloud">&nbsp;&nbsp;我的音乐云盘</div>
+                    <div class="btn me_fm"></i>&nbsp;&nbsp;我的电台</div>
+                    <div class="btn me_collection"></i>&nbsp;&nbsp;我的收藏
+                    </div>
+                </div>
+            </div>
+            <div class="list list_create">
+                <div class="title">创建的歌单</div>
+                <div class="btngroups">
+                    <div class="btn list_create_like active">&nbsp;&nbsp;我喜欢的音乐</div>
+                    <div class="btn list_create_001">&nbsp;&nbsp;歌单001
+                    </div>
+                </div>
+            </div>
+            <div class="list list_collect">
+                <div class="title">收藏的歌单</div>
+                <div class="btngroups">
+                    <div class="btn list_collect_id001">&nbsp;&nbsp;舞曲
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- body 主体 -->
+    <div class="body">
+        <!-- 推荐歌单 -->
+        <div class="songlist">
+            <div class="songlist_title">
+                <span class="songlist_more">
+                    全部歌单>></span>
+            </div>
+            <div class="songlist_listWrap">
+                <ul class="songlist_list">
+                    <li class="card">
+                        <div class="card_img">
+                            <img src="https://p2.music.126.net/7I00j9vTFbDrWzau3_qeRw==/1422768061504673.jpg?param=180y180"
+                                alt="">
+                            <a href="./songList/songList.html?listId=4990330086">
+                                <div class="play"><i class="iconfont icon-iconfontplay"></i></div>
+                            </a>
+                        </div>
+                        <div class="title">Charlotte（夏洛特）</div>
+                        <div class="num">播放量：17万</div>
+                    </li>
+                    <li class="card">
+                        <div class="card_img">
+                            <img src="https://p2.music.126.net/OxoQQ1Q-o9KhqFEpx5eq-g==/109951165678674209.jpg?param=180y180"
+                                alt="">
+                            <a href="./songList/songList.html?listId=3204486765">
+                                <div class="play"><i class="iconfont icon-iconfontplay"></i></div>
+                            </a>
+                        </div>
+                        <div class="title">有没有人告诉你，你的声音真的很治愈</div>
+                        <div class="num">播放量：231万</div>
+                    </li>
+                    <li class="card">
+                        <div class="card_img">
+                            <img src="https://p2.music.126.net/dZCr5IBF58gPgRIfQv3dUg==/109951165690631754.jpg?param=180y180"
+                                alt="">
+                            <a href="./songList/songList.html?listId=2916346957">
+                                <div class="play"><i class="iconfont icon-iconfontplay"></i></div>
+                            </a>
+                        </div>
+                        <div class="title">山河沦陷星空沉寂，我带着春天奔向最好的你</div>
+                        <div class="num">播放量：50万</div>
+                    </li>
+                    <li class="card">
+                        <div class="card_img">
+                            <img src="https://p4.music.126.net/5LwnXJySgBO63OFPSWbWHw==/109951165639120875.jpg?param=180y180"
+                                alt="">
+                            <a href="./songList/songList.html?listId=2717493873">
+                                <div class="play"><i class="iconfont icon-iconfontplay"></i></div>
+                            </a>
+                        </div>
+                        <div class="title">忘 不 了 你 的 爱</div>
+                        <div class="num">播放量：82万</div>
+                    </li>
+                    <li class="card">
+                        <div class="card_img">
+                            <a href="wyy_details.html"><img
+                                    src=" https://p1.music.126.net/yOVwOmPnuKegqL4EcfXI5w==/109951165734467214.jpg?param=180y180"
+                                    alt="">
+                            </a>
+                        </div>
+                            <div class="title">假期结束！快收下这份“收心”指南</div>
+                        <div class="num">播放量：20万</div>
+                    </li>
+                    <li class="card">
+                        <div class="card_img">
+                            <img src="https://p2.music.126.net/pp31s6f_HosKP0GFCf8huQ==/109951165745234229.jpg?param=180y180"
+                                alt="">
+                            <a href="./songList/songList.html?listId=3232240174">
+                                <div class="play"><i class="iconfont icon-iconfontplay"></i></div>
+                            </a>
+                        </div>
+                        <div class="title">回忆录｜你是我最热烈的青春，最稚拙的浪漫</div>
+                        <div class="num">播放量：35万</div>
+                    </li>
+                    <li class="card">
+                        <div class="card_img">
+                            <img src="https://p2.music.126.net/0MzdxTmiY0tO4SR4dp6WvA==/109951164845157020.jpg?param=180y180"
+                                alt="">
+                            <a href="./songList/songList.html?listId=4879799554">
+                                <div class="play"><i class="iconfont icon-iconfontplay"></i></div>
+                            </a>
+                        </div>
+                        <div class="title">“没有人会突然不爱你，只是你突然才发现”</div>
+                        <div class="num">播放量：286万</div>
+                    </li>
+                    <li class="card">
+                        <div class="card_img">
+                            <img src="https://p1.music.126.net/-GTsAjT-DrMJ8MtAAk7ROg==/109951164865582712.jpg?param=180y180"
+                                alt="">
+                            <a href="./songList/songList.html?listId=3131035907">
+                                <div class="play"><i class="iconfont icon-iconfontplay"></i></div>
+                            </a>
+                        </div>
+                        <div class="title">『精选翻唱』万人血书求完整～</div>
+                        <div class="num">播放量：521万</div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- 换页 -->
+        <div class="change">
+            <ul>
+                <li><a href="">&lt;</a></li>
+                <li class="here"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">&gt;</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <!-- page_playerbar 页面底部播放控制条 -->
+    <div class="page_playerbar clearfix">
+        <!-- 播放控制按钮组 -->
+        <div class="playerbar_playbtngroup">
+            <div class="btn prev"></div>
+            <div class="btn play"></div>
+            <div class="btn next"></div>
+        </div>
+        <!-- 进度条 -->
+        <div class="playerbar_timeprogress">
+            <div class="progress">
+                <div class="progress_cache">
+                    <!-- 缓冲条 -->
+                </div>
+                <div class="progress_curbar">
+                    <div class="curbar_arc"></div>
+                </div>
+                <div class="time start">00:00</div>
+                <div class="time end">59:59</div>
+            </div>
+        </div>
+        <!-- 其他控制按钮组 -->
+        <div class="playerbar_others">
+            <div class="volume">
+                <div class="progress">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
